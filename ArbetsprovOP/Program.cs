@@ -7,7 +7,7 @@ namespace ArbetsprovOP
     public class Program
     {
         /// <summary>
-        /// I used the library log4net to put all my answers in a log. The logfile is located in C:\\MinaLoggar\\Loggen.txt
+        /// I used the library log4net to put all my false and null answers in a log. The logfile is located in C:\\MinaLoggar\\Loggen.txt
         /// So when you run the program a folder will be automaticly created in the C drive named "MinaLoggar".
         /// In that folder you will find a file named "Loggen.txt" and if you open that file you will see all the answers.
         /// </summary>
@@ -28,7 +28,11 @@ namespace ArbetsprovOP
             if (allasiffror.Length == 10)
             {
                 Console.WriteLine($"The swedish social security number {siffror} is " + persnum.IsValid(allasiffror));
-                logger.Info($"The swedish social security number {siffror} is " + persnum.IsValid(allasiffror));
+                if (persnum.IsValid(allasiffror) == false)
+                {
+                    logger.Info($"The swedish social security number {siffror} is " + persnum.IsValid(allasiffror));
+                }
+
 
                 Console.WriteLine("");
             }
@@ -44,16 +48,21 @@ namespace ArbetsprovOP
             string regNum = Console.ReadLine();
             bool validRegNum = regex.ValidateReg(regNum);
             Console.WriteLine($"Registration number {regNum} is: " + validRegNum);
-            logger.Info($"Registration number {regNum} is: " + validRegNum);
+
+            if (validRegNum == false)
+            {
+                logger.Info($"Registration number {regNum} is: " + validRegNum);
+            }
+
             Console.WriteLine("");
 
             string? info = null;
 
             CheckIfNull.IfNull(info);
-            logger.Info("The value is: " + info);
-
-
-
+            if (info == null)
+            {
+                logger.Info("The value is null");
+            }
 
 
         }
