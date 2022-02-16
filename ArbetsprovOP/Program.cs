@@ -6,6 +6,11 @@ namespace ArbetsprovOP
 {
     public class Program
     {
+        /// <summary>
+        /// I used the library log4net to put all my answers in a log. The logfile is located in C:\\MinaLoggar\\Loggen.txt
+        /// So when you run the program a folder will be automaticly created in the C drive named "MinaLoggar".
+        /// In that folder you will find a file named "Loggen.txt" and if you open that file you will see all the answers.
+        /// </summary>
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
   

@@ -8,6 +8,10 @@ namespace ArbetsprovOP
 {
     public class CheckIfNull
     {
+        /// <summary>
+        /// This method checks if the user input is a string or null.
+        /// </summary>
+        /// <param name="message">That is the string input that the user put in. It is either a string or null</param>
         public static void IfNull(string message)
         {
             if (message is null)
